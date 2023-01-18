@@ -5,7 +5,7 @@ Group members:
 - Matias Aldo Ruiz 869139
 
 The purpose of this project is to create a Prolog library that can build 
-structures, internally representing URIs (Universal Resource Identifiers), 
+structures, internally representing URIs (Uniform Resource Identifiers), 
 starting from their representations as strings.
 Parsing requires analyzing and decomposing the input string in sequence, 
 character from character from left to right, in order to build a proper 
