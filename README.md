@@ -30,8 +30,8 @@ IP-address ::= <NNN.NNN.NNN.NNN – N is a digit>
 path ::= <identifier> [‘/’ <identifier>]* [‘/’]
 query ::= <characters without ‘#’>+
 fragment ::= <characters>+
-<identifier> ::= <characters without ‘/’, ‘?’, ‘#’, ‘@’, e ‘:’>+
-<host-identifier> ::= <characters without ‘.’, ‘/’, ‘?’, ‘#’, ‘@’, e ‘:’>+
+<identifier> ::= <characters without ‘/’, ‘?’, ‘#’, ‘@’, or ‘:’>+
+<host-identifier> ::= <characters without ‘.’, ‘/’, ‘?’, ‘#’, ‘@’, or ‘:’>+
 <digit> ::= ‘0’ |‘1’ |‘2’ |‘3’ |‘4’ |‘5’ |‘6’ |‘7’ |‘8’ |‘9’
 scheme-syntax ::= <special syntaxes - see below>
 ``` 
