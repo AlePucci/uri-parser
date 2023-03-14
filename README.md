@@ -15,4 +15,46 @@ A Uniform Resource Identifier (URI) is a unique sequence of characters that iden
 [source: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier]
 
 ## What Request for Comments was used as a reference?
-A simplified version of **[RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986)**.
+A simplified version of **[RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986)**:
+
+```
+URI ::= URI1 | URI2
+URI1 ::= scheme ‘:’ [authorithy] [[‘/’] [path] [‘?’ query] [‘#’ fragment]]
+URI2 ::= scheme ‘:’ scheme-syntax
+scheme ::= <identifier>
+authorithy ::= ‘//’ [ userinfo ‘@’ ] host [‘:’ port]
+userinfo ::= <identifier>
+host ::= <host-identifier> [‘.’ <host-identifier>]* | IP-address
+port ::= <digit>+
+IP-address ::= <NNN.NNN.NNN.NNN – N is a digit>
+path ::= <identifier> [‘/’ <identifier>]* [‘/’]
+query ::= <characters without ‘#’>+
+fragment ::= <characters>+
+<identifier> ::= <characters without ‘/’, ‘?’, ‘#’, ‘@’, e ‘:’>+
+<host-identifier> ::= <characters without ‘.’, ‘/’, ‘?’, ‘#’, ‘@’, e ‘:’>+
+<digit> ::= ‘0’ |‘1’ |‘2’ |‘3’ |‘4’ |‘5’ |‘6’ |‘7’ |‘8’ |‘9’
+scheme-syntax ::= <special syntaxes - see below>
+``` 
+
+**Special syntaxes:**
+
+``` 
+Mailto:
+scheme ::= "mailto"  ->  scheme-syntax ::= [userinfo [‘@’ host]]
+
+News:
+scheme ::= "news" -> scheme-syntax ::= [host]
+
+Tel/fax:
+scheme ::= "tel" | "fax" -> scheme-syntax ::= [userinfo]
+
+Zos:
+scheme ::= "zos" -> URI1 ::= scheme ‘:’ [authorithy] [[‘/’] [path] [‘?’ query] [‘#’ fragment]]
+
+In this case, path is quite different, but the other fields need to be checked like usual.
+path ::= <id44> [‘(’ <id8> ‘)’]
+id44 ::= (<alphanum> | ‘.’)+     (max. length = 44 characters. Can not end with a ‘.’)
+id8 ::= (<alphanum>)+            (max. length = 8 characters)
+alphanum ::= <alphabetic characters and digits>
+``` 
+
