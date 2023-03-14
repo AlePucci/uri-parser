@@ -1,4 +1,4 @@
-# LP_E1P_2022: AN URI STRING PARSER
+# Common Lisp URI parser
 
 Group members:
 - Alessandro Pucci 869177
